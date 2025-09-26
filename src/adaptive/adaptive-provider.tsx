@@ -27,7 +27,7 @@ export const AdaptiveProvider = ({
   });
 
   if (!selfHostedAdaptive) {
-    throw new Error("AdaptivefastProvider: Failed to initialize adaptive");
+    throw new Error("AdaptiveProvider: Failed to initialize adaptive");
   }
 
   return (
