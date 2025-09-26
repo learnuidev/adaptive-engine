@@ -12,6 +12,7 @@ export interface TrackingConfig {
   trackingDomain: string | null;
   // apiEndpoint: string;
   addEventEndpoint: string;
+  identifyEndpoint: string;
 }
 
 export interface TrackingStatus {
@@ -68,6 +69,7 @@ export type AdaptiveIdentity = {
 export type IAdaptive =
   | undefined
   | {
+      identify: () => Promise<AdaptiveIdentity>;
       adaptive: (eventName: string, eventData?: any) => void;
     };
 

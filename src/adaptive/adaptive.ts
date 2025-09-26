@@ -87,6 +87,40 @@ export function adaptive({
     config.trackingDomain
   );
 
+  const identify = async () => {
+    const baseData = collectBaseData(
+      config.websiteId,
+      config.trackingDomain,
+      getOrCreateSessionId,
+      identity
+    );
+
+    const identifyResponse = await fetch(config.identifyEndpoint, {
+      method: "POST",
+      body: JSON.stringify(baseData),
+    });
+
+    if (!identifyResponse.ok) {
+      throw new Error(`Error identifying user`);
+    }
+
+    const identifyJson: any = await identifyResponse.json();
+
+    if (identifyJson?.id) {
+      (window as any).identityId = identifyJson.id;
+    }
+
+    return identifyJson;
+  };
+
+  const identifyTracker = createEventTracker(
+    trackingEnabled,
+    baseDataCollector,
+    eventSender,
+    config.identifyEndpoint,
+    config.trackingDomain
+  );
+
   const elementTracker = createElementTracker(
     eventTracker.trackEvent,
     validateCustomEventData
@@ -220,5 +254,5 @@ export function adaptive({
   // Initial pageview
   triggerPageview();
 
-  return { adaptive };
+  return { adaptive, identify };
 }

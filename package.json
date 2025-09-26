@@ -1,6 +1,6 @@
 {
   "name": "adaptive-engine",
-  "version": "1.0.96",
+  "version": "1.0.99",
   "type": "module",
   "bin": "dist/index.js",
   "main": "dist/index.js",

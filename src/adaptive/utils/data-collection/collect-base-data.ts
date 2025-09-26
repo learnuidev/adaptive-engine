@@ -37,6 +37,8 @@ export const collectBaseData = (
     viewport: { width: window.innerWidth, height: window.innerHeight },
     visitorId: getOrCreateVisitorId(),
     sessionId: getOrCreateSessionId(),
+    identityId: (window as any)?.identityId,
     adClickIds: Object.keys(adClickIds).length > 0 ? adClickIds : undefined,
+    ...identity,
   };
 };

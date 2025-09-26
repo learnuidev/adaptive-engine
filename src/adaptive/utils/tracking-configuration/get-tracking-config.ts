@@ -39,6 +39,8 @@ export const getTrackingConfig = ({
   const apiEndpoint = baseApiUrl;
   const addEventEndpoint = `${baseApiUrl}/v1/analytics/add-events`;
 
+  const identifyEndpoint = `${baseApiUrl}/v1/analytics/identify`;
+
   return {
     allowFileProtocol,
     allowLocalhost,
@@ -47,5 +49,6 @@ export const getTrackingConfig = ({
     trackingDomain,
     // apiEndpoint,
     addEventEndpoint,
+    identifyEndpoint,
   };
 };
