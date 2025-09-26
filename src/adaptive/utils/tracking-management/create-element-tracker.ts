@@ -1,4 +1,4 @@
-import { EventCallback } from "../../datafast.types.ts";
+import { EventCallback } from "../../adaptive.types.ts";
 
 export const createElementTracker = (
   trackEvent: (

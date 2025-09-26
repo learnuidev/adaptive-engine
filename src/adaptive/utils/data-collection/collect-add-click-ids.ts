@@ -1,4 +1,4 @@
-import { AdClickIds } from "../../datafast.types.ts";
+import { AdClickIds } from "../../adaptive.types.ts";
 
 export const collectAdClickIds = (url: URL): AdClickIds => {
   const clickIdParams = {

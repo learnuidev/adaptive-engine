@@ -1,8 +1,8 @@
-import { dataFast } from "./adaptive.ts";
+import { adaptive } from "./adaptive.ts";
 import {
-  DatafastProvider,
-  useDatafast,
-  DatafastContext,
-} from "./datafast-provider.tsx";
+  AdaptiveProvider,
+  useAdaptive,
+  AdaptiveContext,
+} from "./adaptive-provider.tsx";
 
-export { dataFast, DatafastProvider, useDatafast, DatafastContext };
+export { adaptive, AdaptiveProvider, useAdaptive, AdaptiveContext };

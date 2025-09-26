@@ -1,4 +1,4 @@
-import { BaseData, DatafastIdentity } from "../../datafast.types.ts";
+import { AdaptiveIdentity, BaseData } from "../../adaptive.types.ts";
 import { createIdGenerator } from "../id-generation/create-id-generator.ts";
 import { collectAdClickIds } from "./collect-add-click-ids.ts";
 
@@ -6,7 +6,7 @@ export const collectBaseData = (
   websiteId: string | null,
   trackingDomain: string | null,
   getOrCreateSessionId: () => string,
-  identity: DatafastIdentity
+  identity: AdaptiveIdentity
 ): BaseData | null => {
   const getOrCreateVisitorId = createIdGenerator(
     "datafast_visitor_id",

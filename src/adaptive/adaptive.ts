@@ -3,9 +3,9 @@
 import {
   BaseData,
   EventCallback,
-  IDatafastInput,
+  IAdaptiveInput,
   PageviewState,
-} from "./datafast.types.ts";
+} from "./adaptive.types.ts";
 import { collectBaseData } from "./utils/data-collection/collect-base-data.ts";
 import { sendEvent } from "./utils/event-management/send-event.ts";
 import { validateCustomEventData } from "./utils/event-validation/validate-custom-event-data.ts";
@@ -18,18 +18,18 @@ import { createPaymentDetector } from "./utils/tracking-management/create-paymen
 import { initializeScrollTracking } from "./utils/tracking-management/initialize-scroll-tracking.ts";
 import { setupHistoryTracking } from "./utils/tracking-management/setup-history-tracking.ts";
 
-export type IDatafast =
+export type IAdaptive =
   | undefined
   | {
       datafast: (eventName: string, eventData?: any) => void;
     };
 
-export function dataFast({
+export function adaptive({
   apiKey,
   domain,
   apiUrl,
   identity,
-}: IDatafastInput): IDatafast {
+}: IAdaptiveInput): IAdaptive {
   // ========== MAIN INITIALIZATION ==========
 
   const config = getTrackingConfig({ apiKey, domain, apiUrl, identity });

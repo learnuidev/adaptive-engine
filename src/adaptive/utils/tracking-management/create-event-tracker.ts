@@ -5,7 +5,7 @@ import {
   PageviewState,
   PaymentProvider,
   PaymentProviderData,
-} from "../../datafast.types.ts";
+} from "../../adaptive.types.ts";
 
 export const createEventTracker = (
   trackingEnabled: boolean,

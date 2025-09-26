@@ -60,13 +60,13 @@ export interface EventCallback {
   (response: { status: number }): void;
 }
 
-export interface DatafastIdentity {
+export type AdaptiveIdentity = {
   email: string;
-}
+} & any;
 
-export interface IDatafastInput {
+export interface IAdaptiveInput {
   domain: string;
   apiKey: string;
   apiUrl: string;
-  identity: DatafastIdentity;
+  identity: AdaptiveIdentity;
 }

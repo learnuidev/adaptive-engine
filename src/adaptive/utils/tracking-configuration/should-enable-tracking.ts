@@ -1,4 +1,4 @@
-import { TrackingConfig, TrackingStatus } from "../../datafast.types.ts";
+import { TrackingConfig, TrackingStatus } from "../../adaptive.types.ts";
 import { isBot } from "../environment-detection/is-bot.ts";
 import { isLocalhost } from "../environment-detection/is-local-host.ts";
 

@@ -1,8 +1,8 @@
 import {
   BaseData,
-  DatafastIdentity,
+  AdaptiveIdentity,
   EventCallback,
-} from "../../datafast.types.ts";
+} from "../../adaptive.types.ts";
 import { setCookie } from "../cookie-management/set-cookie.ts";
 import { isBot } from "../environment-detection/is-bot.ts";
 
@@ -12,7 +12,7 @@ export const sendEvent = (
   apiEndpoint: string,
   trackingDomain: string | null,
   getOrCreateSessionId: () => string,
-  identity: DatafastIdentity
+  identity: AdaptiveIdentity
 ): void => {
   if (localStorage.getItem("datafast_ignore") === "true") {
     console.log("DataFast: Tracking disabled via localStorage flag");

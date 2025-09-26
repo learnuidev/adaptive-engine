@@ -1,4 +1,4 @@
-import { EventCallback, PaymentProvider } from "../../datafast.types.ts";
+import { EventCallback, PaymentProvider } from "../../adaptive.types.ts";
 
 export const createPaymentDetector = (
   trackPayment: (

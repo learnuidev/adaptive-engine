@@ -1,10 +1,10 @@
-import { IDatafastInput, TrackingConfig } from "../../datafast.types.ts";
+import { IAdaptiveInput, TrackingConfig } from "../../adaptive.types.ts";
 
 export const getTrackingConfig = ({
   apiKey,
   domain,
   apiUrl,
-}: IDatafastInput): TrackingConfig => {
+}: IAdaptiveInput): TrackingConfig => {
   // const currentScript = document.currentScript as HTMLScriptElement;
   // const dataPrefix = "data-";
   // const getScriptAttribute = currentScript.getAttribute.bind(currentScript);
