@@ -64,6 +64,12 @@ export type AdaptiveIdentity = {
   email: string;
 } & any;
 
+export type IAdaptive =
+  | undefined
+  | {
+      datafast: (eventName: string, eventData?: any) => void;
+    };
+
 export interface IAdaptiveInput {
   domain: string;
   apiKey: string;

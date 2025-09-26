@@ -6,4 +6,17 @@ import "./adaptive.types.ts";
 //   AdaptiveContext,
 // } from "./adaptive-provider.tsx";
 
-export { adaptive };
+import {
+  type IAdaptiveInput,
+  type IAdaptive,
+  type AdaptiveIdentity,
+  type PaymentProvider,
+} from "./adaptive.types.ts";
+
+export {
+  adaptive,
+  type IAdaptive,
+  type IAdaptiveInput,
+  type AdaptiveIdentity,
+  type PaymentProvider,
+};

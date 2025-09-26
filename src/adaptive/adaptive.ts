@@ -3,6 +3,7 @@
 import {
   BaseData,
   EventCallback,
+  IAdaptive,
   IAdaptiveInput,
   PageviewState,
 } from "./adaptive.types.ts";
@@ -17,12 +18,6 @@ import { createEventTracker } from "./utils/tracking-management/create-event-tra
 import { createPaymentDetector } from "./utils/tracking-management/create-payment-detector.ts";
 import { initializeScrollTracking } from "./utils/tracking-management/initialize-scroll-tracking.ts";
 import { setupHistoryTracking } from "./utils/tracking-management/setup-history-tracking.ts";
-
-export type IAdaptive =
-  | undefined
-  | {
-      datafast: (eventName: string, eventData?: any) => void;
-    };
 
 export function adaptive({
   apiKey,

@@ -1,5 +1,5 @@
-import { IAdaptiveInput } from "./adaptive.types.ts";
-import { adaptive, IAdaptive } from "./adaptive.ts";
+import { IAdaptive, IAdaptiveInput } from "./adaptive.types.ts";
+import { adaptive } from "./adaptive.ts";
 import React, { createContext, useContext } from "react";
 
 export const AdaptiveContext = createContext<IAdaptive | undefined>(undefined);
