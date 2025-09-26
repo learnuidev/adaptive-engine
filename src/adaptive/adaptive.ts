@@ -199,7 +199,12 @@ export function adaptive({
 
   // Set up event listeners
   const setupEventListeners = (): void => {
+    let clickThrottleTimer: number | null = null;
     document.addEventListener("click", (event) => {
+      if (clickThrottleTimer) return;
+      clickThrottleTimer = window.setTimeout(() => {
+        clickThrottleTimer = null;
+      }, 100);
       const goalElement = (event.target as Element).closest("[data-fast-goal]");
       if (goalElement) elementTracker.trackGoalClick(goalElement);
       elementTracker.trackExternalLink((event.target as Element).closest("a"));
