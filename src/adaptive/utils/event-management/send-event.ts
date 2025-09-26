@@ -1,4 +1,3 @@
-import { identity } from "ramda";
 import {
   BaseData,
   DatafastIdentity,

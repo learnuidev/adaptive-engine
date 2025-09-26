@@ -1,6 +1,6 @@
 import { IDatafastInput } from "./datafast.types";
-import { dataFast, IDatafast } from "./datafast.v2";
-import { createContext, useContext } from "react";
+import { dataFast, IDatafast } from "./index";
+import React, { createContext, useContext } from "react";
 
 export const DatafastContext = createContext<IDatafast | undefined>(undefined);
 
