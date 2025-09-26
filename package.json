@@ -1,9 +1,9 @@
 {
   "name": "adaptive-engine",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "type": "module",
   "bin": "dist/index.js",
-  "main": "dist/config.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf .turbo node_modules dist",
