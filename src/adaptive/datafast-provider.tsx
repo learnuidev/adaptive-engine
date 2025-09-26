@@ -1,5 +1,5 @@
-import { IDatafastInput } from "./datafast.types";
-import { dataFast, IDatafast } from "./index";
+import { IDatafastInput } from "./datafast.types.ts";
+import { dataFast, IDatafast } from "./adaptive.ts";
 import React, { createContext, useContext } from "react";
 
 export const DatafastContext = createContext<IDatafast | undefined>(undefined);
