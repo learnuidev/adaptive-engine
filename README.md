@@ -2,7 +2,7 @@
 
 Adaptive is a an next generation analytics library
 
-## Why use Languine?
+## Installation?
 
 ```bash
 $ npx i adaptive-engine@latest
