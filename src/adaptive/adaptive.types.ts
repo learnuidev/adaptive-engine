@@ -10,7 +10,8 @@ export interface TrackingConfig {
   debugMode: boolean;
   websiteId: string | null;
   trackingDomain: string | null;
-  apiEndpoint: string;
+  // apiEndpoint: string;
+  addEventEndpoint: string;
 }
 
 export interface TrackingStatus {

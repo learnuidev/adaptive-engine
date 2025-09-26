@@ -36,7 +36,7 @@ export const createEventTracker = (
       currentUrl === pageviewState.lastUrl &&
       currentTime - pageviewState.lastTime < 60000
     ) {
-      console.log("DataFast: Pageview throttled - too recent");
+      console.log("Adaptive: Pageview throttled - too recent");
       callback?.({ status: 200 });
       return pageviewState;
     }
@@ -53,7 +53,7 @@ export const createEventTracker = (
     // Store pageview state
     try {
       sessionStorage.setItem(
-        "datafast_pageview_state",
+        "adaptive_pageview_state",
         JSON.stringify({ time: currentTime, url: currentUrl })
       );
     } catch (error) {

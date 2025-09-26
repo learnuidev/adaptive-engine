@@ -7,7 +7,7 @@ export const AdaptiveContext = createContext<IAdaptive | undefined>(undefined);
 export const useAdaptive = () => {
   const context = useContext(AdaptiveContext);
   if (!context) {
-    throw new Error("useAdaptive must be used within a DatafastProvider");
+    throw new Error("useAdaptive must be used within a AdaptiveProvider");
   }
   return context;
 };
@@ -19,19 +19,19 @@ export const AdaptiveProvider = ({
   apiUrl,
   identity,
 }: { children: React.ReactNode } & IAdaptiveInput) => {
-  const selfHostedDataFast = adaptive({
+  const selfHostedAdaptive = adaptive({
     apiKey,
     apiUrl,
     domain,
     identity,
   });
 
-  if (!selfHostedDataFast) {
+  if (!selfHostedAdaptive) {
     throw new Error("AdaptivefastProvider: Failed to initialize adaptive");
   }
 
   return (
-    <AdaptiveContext.Provider value={selfHostedDataFast}>
+    <AdaptiveContext.Provider value={selfHostedAdaptive}>
       {children}
     </AdaptiveContext.Provider>
   );

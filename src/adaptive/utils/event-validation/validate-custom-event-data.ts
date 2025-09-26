@@ -9,13 +9,13 @@ export const validateCustomEventData = (
     typeof customData !== "object" ||
     Array.isArray(customData)
   ) {
-    console.warn("DataFast: customData must be a non-null object");
+    console.warn("Adaptive: customData must be a non-null object");
     return {};
   }
 
   const entries = Object.entries(customData);
   if (entries.length > 10) {
-    console.error("DataFast: Maximum 10 custom parameters allowed");
+    console.error("Adaptive: Maximum 10 custom parameters allowed");
     return null;
   }
 
@@ -30,7 +30,7 @@ export const validateCustomEventData = (
 
       if (!validatePropertyName(key)) {
         console.error(
-          `DataFast: Invalid property name "${key}". Use only lowercase letters, numbers, underscores, and hyphens. Max 32 characters.`
+          `Adaptive: Invalid property name "${key}". Use only lowercase letters, numbers, underscores, and hyphens. Max 32 characters.`
         );
         return null;
       }

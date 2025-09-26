@@ -13,10 +13,10 @@ export const createPaymentDetector = (
     );
     if (
       sessionId?.startsWith("cs_") &&
-      !sessionStorage.getItem(`datafast_stripe_payment_sent_${sessionId}`)
+      !sessionStorage.getItem(`adaptive_stripe_payment_sent_${sessionId}`)
     ) {
       trackPayment("stripe", sessionId);
-      sessionStorage.setItem(`datafast_stripe_payment_sent_${sessionId}`, "1");
+      sessionStorage.setItem(`adaptive_stripe_payment_sent_${sessionId}`, "1");
     }
   },
 
@@ -26,10 +26,10 @@ export const createPaymentDetector = (
     );
     if (
       checkoutId &&
-      !sessionStorage.getItem(`datafast_polar_payment_sent_${checkoutId}`)
+      !sessionStorage.getItem(`adaptive_polar_payment_sent_${checkoutId}`)
     ) {
       trackPayment("polar", checkoutId);
-      sessionStorage.setItem(`datafast_polar_payment_sent_${checkoutId}`, "1");
+      sessionStorage.setItem(`adaptive_polar_payment_sent_${checkoutId}`, "1");
     }
   },
 
@@ -37,11 +37,11 @@ export const createPaymentDetector = (
     const orderId = new URL(window.location.href).searchParams.get("order_id");
     if (
       orderId &&
-      !sessionStorage.getItem(`datafast_lemonsqueezy_payment_sent_${orderId}`)
+      !sessionStorage.getItem(`adaptive_lemonsqueezy_payment_sent_${orderId}`)
     ) {
       trackPayment("lemonsqueezy", orderId);
       sessionStorage.setItem(
-        `datafast_lemonsqueezy_payment_sent_${orderId}`,
+        `adaptive_lemonsqueezy_payment_sent_${orderId}`,
         "1"
       );
     }

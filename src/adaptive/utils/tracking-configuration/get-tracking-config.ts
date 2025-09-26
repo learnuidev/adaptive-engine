@@ -25,9 +25,9 @@ export const getTrackingConfig = ({
   //   ? new URL("/api/events", apiBaseUrl).href
   //   : baseApiUrl;
 
-  const dataPrefix = "data-";
+  // const dataPrefix = "data-";
 
-  const baseApiUrl = apiUrl || "https://datafa.st/api/events";
+  const baseApiUrl = apiUrl;
 
   const allowFileProtocol = true;
   const allowLocalhost = true;
@@ -37,6 +37,7 @@ export const getTrackingConfig = ({
 
   const apiBaseUrl = true;
   const apiEndpoint = baseApiUrl;
+  const addEventEndpoint = `${baseApiUrl}/v1/analytics/add-events`;
 
   return {
     allowFileProtocol,
@@ -44,6 +45,7 @@ export const getTrackingConfig = ({
     debugMode,
     websiteId,
     trackingDomain,
-    apiEndpoint,
+    // apiEndpoint,
+    addEventEndpoint,
   };
 };

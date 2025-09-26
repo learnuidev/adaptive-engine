@@ -9,7 +9,7 @@ export const collectBaseData = (
   identity: AdaptiveIdentity
 ): BaseData | null => {
   const getOrCreateVisitorId = createIdGenerator(
-    "datafast_visitor_id",
+    "adaptive_visitor_id",
     "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",
     365
   );
@@ -17,7 +17,7 @@ export const collectBaseData = (
   const currentUrl = window.location.href;
   if (!currentUrl) {
     console.warn(
-      "DataFast: Unable to collect href. This may indicate incorrect script implementation or browser issues."
+      "Adaptive: Unable to collect href. This may indicate incorrect script implementation or browser issues."
     );
     return null;
   }

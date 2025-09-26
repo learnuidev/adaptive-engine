@@ -3,7 +3,7 @@ export const initializeScrollTracking = (
 ): void => {
   if (!window.IntersectionObserver) {
     console.warn(
-      "DataFast: Intersection Observer not supported, scroll tracking disabled"
+      "Adaptive: Intersection Observer not supported, scroll tracking disabled"
     );
     return;
   }

@@ -14,14 +14,14 @@ export const sendEvent = (
   getOrCreateSessionId: () => string,
   identity: AdaptiveIdentity
 ): void => {
-  if (localStorage.getItem("datafast_ignore") === "true") {
-    console.log("DataFast: Tracking disabled via localStorage flag");
+  if (localStorage.getItem("adaptive_ignore") === "true") {
+    console.log("Adaptive: Tracking disabled via localStorage flag");
     callback?.({ status: 200 });
     return;
   }
 
   if (isBot()) {
-    console.log("DataFast: Bot detected, not sending data");
+    console.log("Adaptive: Bot detected, not sending data");
     callback?.({ status: 200 });
     return;
   }
@@ -35,7 +35,7 @@ export const sendEvent = (
       if (xhr.status === 200) {
         console.log("Event data sent successfully");
         setCookie(
-          "datafast_session_id",
+          "adaptive_session_id",
           getOrCreateSessionId(),
           1 / 48,
           trackingDomain
