@@ -199,21 +199,24 @@ export function adaptive({
 
   // Set up event listeners
   const setupEventListeners = (): void => {
-    let clickThrottleTimer: number | null = null;
+    let clickTimeout: number | null = null;
     document.addEventListener("click", (event) => {
-      if (clickThrottleTimer) return;
-      clickThrottleTimer = window.setTimeout(() => {
-        clickThrottleTimer = null;
+      if (clickTimeout) window.clearTimeout(clickTimeout);
+      clickTimeout = window.setTimeout(() => {
+        const goalElement = (event.target as Element).closest(
+          "[adaptive-goal]"
+        );
+        if (goalElement) elementTracker.trackGoalClick(goalElement);
+        elementTracker.trackExternalLink(
+          (event.target as Element).closest("a")
+        );
       }, 100);
-      const goalElement = (event.target as Element).closest("[data-fast-goal]");
-      if (goalElement) elementTracker.trackGoalClick(goalElement);
-      elementTracker.trackExternalLink((event.target as Element).closest("a"));
     });
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         const goalElement = (event.target as Element).closest(
-          "[data-fast-goal]"
+          "[adaptive-goal]"
         );
         if (goalElement) elementTracker.trackGoalClick(goalElement);
         elementTracker.trackExternalLink(

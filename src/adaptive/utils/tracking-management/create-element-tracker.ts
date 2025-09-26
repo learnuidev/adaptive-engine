@@ -33,7 +33,7 @@ export const createElementTracker = (
   },
 
   trackGoalClick: (element: Element): void => {
-    const goalName = element.getAttribute("data-fast-goal")?.trim();
+    const goalName = element.getAttribute("adaptive-goal")?.trim();
     if (!goalName) return;
 
     const goalData: Record<string, string> = { eventName: goalName };
@@ -42,8 +42,8 @@ export const createElementTracker = (
     Array.from(element.attributes)
       .filter(
         (attr) =>
-          attr.name.startsWith("data-fast-goal-") &&
-          attr.name !== "data-fast-goal"
+          attr.name.startsWith("adaptive-goal-") &&
+          attr.name !== "adaptive-goal"
       )
       .forEach((attr) => {
         const paramName = attr.name.substring(15).replace(/-/g, "_");
@@ -60,18 +60,18 @@ export const createElementTracker = (
     element: Element,
     observer: IntersectionObserver
   ): void => {
-    const scrollEventName = element.getAttribute("data-fast-scroll")?.trim();
+    const scrollEventName = element.getAttribute("adaptive-scroll")?.trim();
     if (!scrollEventName) return;
 
     const delayMs = Math.max(
       0,
-      parseInt(element.getAttribute("data-fast-scroll-delay") || "0", 10)
+      parseInt(element.getAttribute("adaptive-scroll-delay") || "0", 10)
     );
     const threshold = Math.min(
       1,
       Math.max(
         0,
-        parseFloat(element.getAttribute("data-fast-scroll-threshold") || "0.5")
+        parseFloat(element.getAttribute("adaptive-scroll-threshold") || "0.5")
       )
     );
 
@@ -114,11 +114,11 @@ export const createElementTracker = (
       Array.from(element.attributes)
         .filter(
           (attr) =>
-            attr.name.startsWith("data-fast-scroll-") &&
+            attr.name.startsWith("adaptive-scroll-") &&
             ![
-              "data-fast-scroll",
-              "data-fast-scroll-threshold",
-              "data-fast-scroll-delay",
+              "adaptive-scroll",
+              "adaptive-scroll-threshold",
+              "adaptive-scroll-delay",
             ].includes(attr.name)
         )
         .forEach((attr) => {

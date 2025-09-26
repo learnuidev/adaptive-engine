@@ -9,7 +9,7 @@ export const initializeScrollTracking = (
   }
 
   const scrollElements = Array.from(
-    document.querySelectorAll("[data-fast-scroll]")
+    document.querySelectorAll("[adaptive-scroll]")
   );
   if (scrollElements.length === 0) return;
 
@@ -18,7 +18,7 @@ export const initializeScrollTracking = (
       1,
       Math.max(
         0,
-        parseFloat(element.getAttribute("data-fast-scroll-threshold") || "0.5")
+        parseFloat(element.getAttribute("adaptive-scroll-threshold") || "0.5")
       )
     );
     if (!groups.has(threshold)) groups.set(threshold, []);
