@@ -67,7 +67,7 @@ export type AdaptiveIdentity = {
 export type IAdaptive =
   | undefined
   | {
-      datafast: (eventName: string, eventData?: any) => void;
+      adaptive: (eventName: string, eventData?: any) => void;
     };
 
 export interface IAdaptiveInput {

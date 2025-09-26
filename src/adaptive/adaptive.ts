@@ -93,7 +93,7 @@ export function adaptive({
   );
 
   // Main datafast function
-  const datafast = (eventName: string, eventData?: any): void => {
+  const adaptive = (eventName: string, eventData?: any): void => {
     if (!trackingEnabled) {
       console.log(`DataFast: Event '${eventName}' ignored - ${disabledReason}`);
       return;
@@ -142,7 +142,7 @@ export function adaptive({
   };
 
   // Initialize global function
-  (window as any).datafast = datafast;
+  (window as any).adaptive = adaptive;
   delete (window as any).datafast?.q;
 
   // Process queued calls
@@ -220,5 +220,5 @@ export function adaptive({
   // Initial pageview
   triggerPageview();
 
-  return { datafast };
+  return { adaptive };
 }
