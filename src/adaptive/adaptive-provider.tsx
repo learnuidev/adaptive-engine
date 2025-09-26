@@ -27,7 +27,7 @@ export const AdaptiveProvider = ({
   });
 
   if (!selfHostedDataFast) {
-    throw new Error("DatafastProvider: Failed to initialize dataFast");
+    throw new Error("AdaptivefastProvider: Failed to initialize adaptive");
   }
 
   return (
